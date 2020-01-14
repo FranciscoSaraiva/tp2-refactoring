@@ -7,7 +7,7 @@ public class Mercado {
 	private List<Indice> indices;
 	private List<Acao> acoes;
 	private List<Moeda> moedas;
-	//private List<Commodity> commodities;
+	//private List<Commodity> commodities; //@SMELL dispensable
 
 	public Mercado(){
 	}
@@ -44,20 +44,21 @@ public class Mercado {
 
     public Ativo getAtivoPorNome(String nomeAtivo) {
 
+		//@SMELL dispensable
 		for(int i = 0; i < indices.size(); i++){
-			if(nomeAtivo.compareTo(indices.get(i).getNome()) == 0){
+			if(nomeAtivo.compareTo(indices.get(i).getNome()) == 0){ //@SMELL ooabuser
 				return indices.get(i);
 			}
 		}
 
 		for(int i = 0; i < acoes.size(); i++){
-			if(nomeAtivo.compareTo(acoes.get(i).getNome()) == 0){
+			if(nomeAtivo.compareTo(acoes.get(i).getNome()) == 0){ //@SMELL ooabuser
 				return acoes.get(i);
 			}
 		}
 
 		for(int i = 0; i < moedas.size(); i++){
-			if(nomeAtivo.compareTo(moedas.get(i).getNome()) == 0){
+			if(nomeAtivo.compareTo(moedas.get(i).getNome()) == 0){ //@SMELL ooabuser
 				return moedas.get(i);
 			}
 		}

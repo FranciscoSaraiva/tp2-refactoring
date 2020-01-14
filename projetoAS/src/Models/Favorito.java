@@ -42,7 +42,7 @@ public class Favorito implements Observer {
 
     public Ativo getAtivo(String nome){
         for(int i = 0; i <= favoritos.size(); i++){
-            if(favoritos.get(i).getNome().compareTo(nome) == 0){
+            if(favoritos.get(i).getNome().compareTo(nome) == 0){ //@SMELL ooabuser
                 return favoritos.get(i);
             }
         }
@@ -51,6 +51,6 @@ public class Favorito implements Observer {
 
     @Override
     public void update() {
-
+		//@SMELL dispensable
     }
 }

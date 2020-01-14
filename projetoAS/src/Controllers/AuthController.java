@@ -12,7 +12,7 @@ public class AuthController {
 		System.out.println("User: " + email);
 		System.out.println("Pass: " + pass);
 
-		if(email.equals("admin") && pass.equals("admin")){
+		if(email.equals("admin") && pass.equals("admin")){ //@SMELL ooabuser
 			return true;
 		}
 		return false;
@@ -20,7 +20,7 @@ public class AuthController {
 
 	public void registar(String nome, String email, String password, double fundos) {
 
-		Utilizador u1 = new Utilizador();
+		Utilizador u1 = new Utilizador(); //@SMELL ooabuser
 		u1.setNome(nome);
 		u1.setEmail(email);
 		u1.setPassword(password);

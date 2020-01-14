@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-
+//@SMELL bloater
 public class AtivoCreator {
 
 	public Mercado createAtivos() {
@@ -56,7 +56,7 @@ public class AtivoCreator {
 				String nome = (String) jsonObject.get("ticker");
 				double valorVenda = (Double) jsonObject.get("price");
 				double valorCompra = valorVenda + 0.02;
-				//System.out.println("Nome: " + nome + " Preço de compra: " + valorCompra + "€ Preço de venda: " + valorVenda + "€" );
+				//System.out.println("Nome: " + nome + " Preço de compra: " + valorCompra + "€ Preço de venda: " + valorVenda + "€" ); //@SMELL dispensable
 				Moeda moeda = new Moeda(nome, valorCompra, valorVenda);
 				Moedas.add(moeda);
 			}
@@ -89,7 +89,7 @@ public class AtivoCreator {
 				String nome = (String) jsonObject.get("ticker");
 				double valorVenda = (Double) jsonObject.get("price");
 				double valorCompra = valorVenda + 0.02;
-				//System.out.println("Nome: " + nome + " Preço de compra: " + valorCompra + "€ Preço de venda: " + valorVenda + "€" );
+				//System.out.println("Nome: " + nome + " Preço de compra: " + valorCompra + "€ Preço de venda: " + valorVenda + "€" ); //@SMELL dispensable
 				Indice indice = new Indice(nome, valorCompra, valorVenda);
 				Indices.add(indice);
 			}
@@ -122,7 +122,7 @@ public class AtivoCreator {
 				String nome = (String) jsonObject.get("symbol");
 				double valorVenda = (Double) jsonObject.get("price");
 				double valorCompra = valorVenda + 0.02;
-				//System.out.println("Nome: " + nome + " Preço de compra: " + valorCompra + "€ Preço de venda: " + valorVenda + "€" );
+				//System.out.println("Nome: " + nome + " Preço de compra: " + valorCompra + "€ Preço de venda: " + valorVenda + "€" ); //@SMELL dispensable
 				Acao acao = new Acao(nome, valorCompra, valorVenda);
 				Acoes.add(acao);
 			}

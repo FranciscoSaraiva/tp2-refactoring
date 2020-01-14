@@ -40,6 +40,7 @@ public class MercadoController {
 
 		List <Ativo> mercado = new ArrayList<>();
 
+		//@SMELL dispensable
 		mercado.addAll(m.getIndices());
 		mercado.addAll(m.getAcoes());
 		mercado.addAll(m.getMoedas());

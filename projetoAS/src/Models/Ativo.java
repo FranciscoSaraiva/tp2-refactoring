@@ -37,17 +37,18 @@ public abstract class Ativo {
 	}
 
 	public void getState() {
-		// TODO - implement Ativo.getState
+		// TODO - implement Ativo.getState //@SMELL dispensable
 		throw new UnsupportedOperationException();
 	}
 
 	public void setState() {
-		// TODO - implement Ativo.setState
+		// TODO - implement Ativo.setState //@SMELL dispensable
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public String toString() {
+		//@SMELL coupler
 		return "Ativo{" +
 				"nome='" + nome + '\'' +
 				", valorCompra=" + valorCompra +

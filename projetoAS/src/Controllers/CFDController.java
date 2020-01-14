@@ -12,7 +12,7 @@ public class CFDController {
 
     public CFD createCFD(Utilizador u, Ativo a, double unidades, double sl, double tp, boolean isCompra) {
 
-        CFD cfd = new CFD();
+        CFD cfd = new CFD(); //@SMELL ooabuser
 
         cfd.setUtilizador(u);
         cfd.setAtivo(a);
@@ -24,13 +24,13 @@ public class CFDController {
 
         u.getPortfolio().getCfds().add(cfd);
 
-        //cfdDAO.save(cfd)
+        //cfdDAO.save(cfd) //@SMELL dispensable
 
         return cfd;
     }
 
     public void calcularSLTP(CFD cfd){
-        //TODO - FAZER ISTO
+        //TODO - FAZER ISTO //@SMELL dispensable
         throw new UnsupportedOperationException();
     }
 }

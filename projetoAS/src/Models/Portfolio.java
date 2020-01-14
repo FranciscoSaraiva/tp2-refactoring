@@ -30,7 +30,7 @@ public class Portfolio {
 
 	public CFD getCFD(String nome){
 		for(int i = 0; i <= cfds.size(); i++){
-			if(cfds.get(i).getAtivo().getNome().compareTo(nome) == 0){
+			if(cfds.get(i).getAtivo().getNome().compareTo(nome) == 0){ //@SMELL ooabuser
 				return cfds.get(i);
 			}
 		}

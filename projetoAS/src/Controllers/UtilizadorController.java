@@ -19,7 +19,7 @@ public class UtilizadorController {
     }
 
     public void atualizarFundos() {
-        // TODO - implement UtilizadorController.atualizarFundos
+        // TODO - implement UtilizadorController.atualizarFundos //@SMELL dispensable
         throw new UnsupportedOperationException();
     }
 

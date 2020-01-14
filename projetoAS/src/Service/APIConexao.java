@@ -8,7 +8,7 @@ public class APIConexao {
     public APIConexao(){
     }
 
-    public String getDados(String tipo) {
+    public String getDados(String tipo) { //@SMELL ooabuser
         switch(tipo) {
             case "Moedas":
                 return moedas();
@@ -21,7 +21,7 @@ public class APIConexao {
         }
     }
 
-    private String moedas() {
+    private String moedas() { //@SMELL dispensable
 
         try {
             String CryptoJson = "";
@@ -43,7 +43,7 @@ public class APIConexao {
         return "crypto.json";
     }
 
-    private String index() {
+    private String index() { //@SMELL dispensable
 
         try {
             String CryptoJson = "";
@@ -66,7 +66,7 @@ public class APIConexao {
 
     }
 
-    private String acoes() {
+    private String acoes() { //@SMELL dispensable
 
         try {
             String CryptoJson = "";

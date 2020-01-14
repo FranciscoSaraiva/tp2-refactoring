@@ -80,7 +80,7 @@ public class CFD implements Observer {
 	}
 
 	public void update() {
-		// TODO - implement CFD.update
+		// TODO - implement CFD.update //@SMELL dispensable
 		throw new UnsupportedOperationException();
 	}
 
