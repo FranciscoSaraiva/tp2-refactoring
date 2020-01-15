@@ -1,8 +1,8 @@
 {
   "majorIndexesList" : [ {
     "ticker" : ".DJI",
-    "changes" : 136.17,
-    "price" : 29038.0,
+    "changes" : 201.359,
+    "price" : 29103.2,
     "indexName" : "Dow Jones"
   }, {
     "ticker" : ".IXIC",
@@ -11,23 +11,23 @@
     "indexName" : "Nasdaq"
   }, {
     "ticker" : ".INX",
-    "changes" : 10.8001,
-    "price" : 3293.07,
+    "changes" : 13.5,
+    "price" : 3295.77,
     "indexName" : "S&P 500"
   }, {
     "ticker" : "%5EFCHI",
-    "changes" : -20.87,
-    "price" : 6021.85,
+    "changes" : -10.11,
+    "price" : 6032.61,
     "indexName" : "CAC 40"
   }, {
     "ticker" : "%5ERUI",
-    "changes" : 3.3122,
-    "price" : 1818.66,
+    "changes" : 7.3417,
+    "price" : 1822.69,
     "indexName" : "Russell 1000 Index"
   }, {
     "ticker" : "%5ERUT",
-    "changes" : 5.8524,
-    "price" : 1679.55,
+    "changes" : 13.7626,
+    "price" : 1687.46,
     "indexName" : "Russell 2000 Index"
   }, {
     "ticker" : "%5EPSE",

@@ -5,13 +5,13 @@ import java.net.URL;
 
 public class APIConexaoAcao extends APIConexao  {
 
-    String URL ="https://financialmodelingprep.com/api/v3/stock/real-time-price/AAPL,FB,GOOG,INTC,HPQ,F,AMD,MU,GDX,MSFT,CX";
+    private String URL ="https://financialmodelingprep.com/api/v3/stock/real-time-price/AAPL,FB,GOOG,INTC,HPQ,F,AMD,MU,GDX,MSFT,CX";
 
     public APIConexaoAcao(){
         super();
     }
 
-    String getDados(){
+    public String getDados(){
         try {
             String CryptoJson = "";
             java.net.URL url = new URL(URL);

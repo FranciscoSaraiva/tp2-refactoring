@@ -28,10 +28,10 @@ public class AtivoCreator {
 		file = apiMoeda.getDados();
 		Moedas = readJSONFileMoedas(file, "cryptocurrenciesList");
 
-		file = apiAcao.getDados();
+		file = apiIndice.getDados();
 		Indices = readJSONFileIndex(file, "majorIndexesList");
 
-		file = apiIndice.getDados();
+		file = apiAcao.getDados();
 		Acoes = readJSONFileAcoes(file, "companiesPriceList");
 
 		return new Mercado(Indices, Acoes, Moedas);

@@ -5,13 +5,13 @@ import java.net.URL;
 
 public class APIConexaoMoeda extends APIConexao  {
 
-    String URL = "https://financialmodelingprep.com/api/v3/cryptocurrencies";
+    private String URL = "https://financialmodelingprep.com/api/v3/cryptocurrencies";
 
     public APIConexaoMoeda(){
         super();
     }
 
-    String getDados(){
+    public String getDados(){
         try {
             String CryptoJson = "";
             URL url = new URL(URL);
