@@ -7,16 +7,16 @@ import Models.Utilizador;
 public class FavoritoController {
 
     public void calcularVariacao(Ativo a){
-        //TODO - CALCULAR A VARIAÇÃO //@SMELL dispensable
         throw new UnsupportedOperationException();
     }
 
-    public Favorito getFavoritos(Utilizador u){
-        return u.getFavorito();
+    public Favorito getFavoritos(Utilizador utilizador){
+        return utilizador.getFavorito();
     }
 
-    public void apagarFavorito(Utilizador u, Ativo a){
-        u.getFavorito().apagaFavorito(a); //@SMELL coupler
+    public void apagarFavorito(Utilizador utilizador, Ativo ativo){
+        Favorito favorito = utilizador.getFavorito();
+        favorito.apagaFavorito(ativo);
     }
 
 }
