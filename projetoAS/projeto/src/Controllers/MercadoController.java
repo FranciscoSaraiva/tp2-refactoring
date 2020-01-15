@@ -8,44 +8,45 @@ import java.util.List;
 
 public class MercadoController {
 
-	private Mercado m;
+	private Mercado mercado;
 
-	public MercadoController(Mercado m) {
-		this.m = m;
+	public MercadoController(Mercado mercado) {
+		this.mercado = mercado;
 	}
 
-	public Mercado getM() {
-		return m;
+	public Mercado getMercado() {
+		return mercado;
 	}
+
 	public Ativo getAtivo(String nome) {
-		return m.getAtivoPorNome(nome);
+		return mercado.getAtivoPorNome(nome);
 	}
 
 	public List<Acao> listarAcoes() {
-		return m.getAcoes();
+		return mercado.getAcoes();
 	}
 
 	public List<Moeda> listarMoedas() {
-		return m.getMoedas();
+		return mercado.getMoedas();
 	}
 
 	public List<Indice> listarIndices() {
-		return m.getIndices();
+		return mercado.getIndices();
 	}
 
 	/**
 	 * método bootstrap para popular a plataforma
 	 */
 	public List<Ativo> getMercadoCompleto() {
+		List <Ativo> mercadoNovo = new ArrayList<>();
+		adicionarMercados(mercadoNovo);
+		return mercadoNovo;
+	}
 
-		List <Ativo> mercado = new ArrayList<>();
-
-		//@SMELL dispensable
-		mercado.addAll(m.getIndices());
-		mercado.addAll(m.getAcoes());
-		mercado.addAll(m.getMoedas());
-
-		return mercado;
+	private void adicionarMercados(List<Ativo> mercadoNovo){
+		mercadoNovo.addAll(mercado.getIndices());
+		mercadoNovo.addAll(mercado.getAcoes());
+		mercadoNovo.addAll(mercado.getMoedas());
 	}
 
 }
