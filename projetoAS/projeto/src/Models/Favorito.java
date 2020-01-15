@@ -1,7 +1,6 @@
 package Models;
 
 import Persistance.FavoritoDAO;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,18 +38,16 @@ public class Favorito implements Observer {
         this.percentagemVariacao = percentagemVariacao;
     }
 
-
     public Ativo getAtivo(String nome){
-        for(int i = 0; i <= favoritos.size(); i++){
-            if(favoritos.get(i).getNome().compareTo(nome) == 0){ //@SMELL ooabuser
-                return favoritos.get(i);
-            }
+        for(Ativo ativo: favoritos){
+            if(ativo.getNome().equals(nome))
+                return ativo;
         }
         return null;
     }
 
     @Override
     public void update() {
-		//@SMELL dispensable
+		throw new UnsupportedOperationException();
     }
 }
