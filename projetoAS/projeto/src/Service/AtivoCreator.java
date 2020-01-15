@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-//@SMELL bloater
 public class AtivoCreator {
 
 	public Mercado createAtivos() {
@@ -21,16 +20,18 @@ public class AtivoCreator {
 		List<Acao> Acoes;
 		List<Indice> Indices;
 
-		APIConexao api = new APIConexao();
+		APIConexaoMoeda apiMoeda = new APIConexaoMoeda();
+		APIConexaoAcao apiAcao = new APIConexaoAcao();
+		APIConexaoIndice apiIndice = new APIConexaoIndice();
 		String file = "";
 
-		file = api.getDados("Moedas");
+		file = apiMoeda.getDados();
 		Moedas = readJSONFileMoedas(file, "cryptocurrenciesList");
 
-		file = api.getDados("Index");
+		file = apiAcao.getDados();
 		Indices = readJSONFileIndex(file, "majorIndexesList");
 
-		file = api.getDados("Ações");
+		file = apiIndice.getDados();
 		Acoes = readJSONFileAcoes(file, "companiesPriceList");
 
 		return new Mercado(Indices, Acoes, Moedas);
