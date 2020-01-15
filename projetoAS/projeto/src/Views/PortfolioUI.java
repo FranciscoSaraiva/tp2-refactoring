@@ -38,7 +38,7 @@ public class PortfolioUI {
         DefaultTableModel dtModel = (DefaultTableModel) portfolioTBL.getModel();
         dtModel.setColumnIdentifiers(columnNames);
 
-        List<CFD> portfolio = pc.getPortfolio(uc.getU()).getCfds();
+        List<CFD> portfolio = pc.getPortfolio(uc.getUtilizador()).getCfds();
         int portSize = portfolio.size();
 
 
@@ -63,8 +63,8 @@ public class PortfolioUI {
             public void actionPerformed(ActionEvent e) {
                 int i = JOptionPane.showConfirmDialog(portfolioTBL, "Tem a certeza que pretende encerrar este CFD?");
                 if (i == 0) {
-                    CFD c = pc.getPortfolio(uc.getU()).getCFD((String) portfolioTBL.getValueAt(Integer.parseInt(e.getActionCommand()), 0));
-                    pc.encerrarCFD(uc.getU(), c);
+                    CFD c = pc.getPortfolio(uc.getUtilizador()).getCFD((String) portfolioTBL.getValueAt(Integer.parseInt(e.getActionCommand()), 0));
+                    pc.encerrarCFD(uc.getUtilizador(), c);
                     ((DefaultTableModel) portfolioTBL.getModel()).removeRow(Integer.parseInt(e.getActionCommand()));
                     JOptionPane.showMessageDialog(null, "Encerrado!");
                 }

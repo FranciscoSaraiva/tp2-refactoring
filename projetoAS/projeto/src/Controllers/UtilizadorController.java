@@ -4,27 +4,31 @@ import Models.*;
 
 public class UtilizadorController {
 
-    private Utilizador u;
+    private Utilizador utilizador;
 
-    public UtilizadorController(Utilizador u) {
-        this.u = u;
+    public UtilizadorController(Utilizador utilizador) {
+        this.utilizador = utilizador;
     }
 
-    public Utilizador getU() {
-        return u;
+    public Utilizador getUtilizador() {
+        return utilizador;
     }
 
     public void adicionarFundos(double quantia) {
-        u.setFundos(u.getFundos() + quantia);
+        double novosFundos = calcularNovosFundos(quantia);
+        utilizador.setFundos(novosFundos);
+    }
+
+    private double calcularNovosFundos(double quantia){
+        return utilizador.getFundos() + quantia;
     }
 
     public void atualizarFundos() {
-        // TODO - implement UtilizadorController.atualizarFundos //@SMELL dispensable
         throw new UnsupportedOperationException();
     }
 
     public double getFundos() {
-        return u.getFundos();
+        return utilizador.getFundos();
     }
 
 }

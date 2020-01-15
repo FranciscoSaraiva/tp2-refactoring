@@ -72,7 +72,7 @@ public class MercadoUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Ativo a = mc.getAtivo((String) ativosTbl.getValueAt(Integer.parseInt(e.getActionCommand()), 0));
-                if(uc.getU().getFavorito().getFavoritos().add(a)) {
+                if(uc.getUtilizador().getFavorito().getFavoritos().add(a)) {
                     JOptionPane.showMessageDialog(null, "Adicionado! \nConsultar lista de Favoritos.");
                 }
             }

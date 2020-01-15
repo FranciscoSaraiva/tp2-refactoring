@@ -38,7 +38,7 @@ public class FavoritosUI {
         DefaultTableModel dtModel = (DefaultTableModel) table1.getModel();
         dtModel.setColumnIdentifiers(columnNames);
 
-        List<Ativo> favoritos = fc.getFavoritos(uc.getU()).getFavoritos();
+        List<Ativo> favoritos = fc.getFavoritos(uc.getUtilizador()).getFavoritos();
         int favSize = favoritos.size();
 
         Object dados[] = new Object[4];
@@ -59,8 +59,8 @@ public class FavoritosUI {
             public void actionPerformed(ActionEvent e) {
                 int i = JOptionPane.showConfirmDialog(table1, "Tem a certeza que pretende remover este Ativo da sua lista?");
                 if (i == 0) {
-                    Ativo a = fc.getFavoritos(uc.getU()).getAtivo((String) table1.getValueAt(Integer.parseInt(e.getActionCommand()), 0));
-                    fc.apagarFavorito(uc.getU(), a);
+                    Ativo a = fc.getFavoritos(uc.getUtilizador()).getAtivo((String) table1.getValueAt(Integer.parseInt(e.getActionCommand()), 0));
+                    fc.apagarFavorito(uc.getUtilizador(), a);
                     ((DefaultTableModel) table1.getModel()).removeRow(Integer.parseInt(e.getActionCommand()));
                     JOptionPane.showMessageDialog(null, "Apagado!");
                 }

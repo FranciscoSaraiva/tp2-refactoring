@@ -1,11 +1,9 @@
 package Views;
 
 import Controllers.CFDController;
-import Controllers.MercadoController;
 import Controllers.UtilizadorController;
 import Models.Ativo;
 import Models.CFD;
-import Models.Utilizador;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -60,7 +58,7 @@ public class CfdUI {
             isCompra = false;
         }
 
-        CFD c = cc.createCFD(uc.getU(), a, unidades, sl, tp, isCompra);
+        CFD c = cc.createCFD(uc.getUtilizador(), a, unidades, sl, tp, isCompra);
 
         if(c != null) {
             JOptionPane.showMessageDialog(null, "CFD criado com sucesso! \nConsultar Portfolio para mais informação.", null, JOptionPane.INFORMATION_MESSAGE);
