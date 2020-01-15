@@ -15,12 +15,12 @@ public class FavoritoDAO implements DAO {
 
     @Override
     public void save(Object o) {
-		//@SMELL dispensable
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void update(Object o) {
-		//@SMELL dispensable
+        throw new UnsupportedOperationException();
     }
 
     @Override
