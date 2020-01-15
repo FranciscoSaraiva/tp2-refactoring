@@ -20,6 +20,13 @@ public class Utilizador {
         this.portfolio = new Portfolio();
     }
 
+    public Utilizador(String nome, String email, String password, double fundos){
+        this.nome=nome;
+        this.email=email;
+        this.password=password;
+        this.fundos=fundos;
+    }
+
     public Favorito getFavorito() {
         return favorito;
     }

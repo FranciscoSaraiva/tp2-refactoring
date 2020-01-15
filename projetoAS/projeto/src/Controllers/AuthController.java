@@ -5,26 +5,21 @@ import Models.Utilizador;
 
 public class AuthController {
 
-	private Conta acc;
+	private Conta conta;
 
-	public Boolean logIn(String email, String pass) {
-		System.out.println("Recebi os dados: ");
-		System.out.println("User: " + email);
-		System.out.println("Pass: " + pass);
-
-		if(email.equals("admin") && pass.equals("admin")){ //@SMELL ooabuser
-			return true;
-		}
-		return false;
+	public Boolean logIn(String email, String password) {
+		mensagemLogin(email, password);
+		return email.equals("admin") && password.equals("admin");
 	}
 
 	public void registar(String nome, String email, String password, double fundos) {
+		Utilizador u1 = new Utilizador(nome, email, password, fundos);
+	}
 
-		Utilizador u1 = new Utilizador(); //@SMELL ooabuser
-		u1.setNome(nome);
-		u1.setEmail(email);
-		u1.setPassword(password);
-		u1.setFundos(fundos);
+	public void mensagemLogin(String email, String password){
+		System.out.println("Recebi os dados: ");
+		System.out.println("User: " + email);
+		System.out.println("Pass: " + password);
 	}
 
 	public void logout() {
