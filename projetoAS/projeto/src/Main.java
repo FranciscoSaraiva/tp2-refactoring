@@ -3,20 +3,32 @@ import Controllers.UtilizadorController;
 import Models.*;
 import Views.*;
 import Service.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
+        List<Moeda> moedas;
+        List<Indice> indices;
+        List<Acao> acoes;
 
-        AtivoCreator creator = new AtivoCreator();
-        Mercado m = creator.createAtivos();
-        MercadoController mc = new MercadoController(m);
+        AtivoCreatorMoeda creatorMoeda = new AtivoCreatorMoeda();
+        moedas = creatorMoeda.createAtivos();
 
-        Utilizador u1 = new Utilizador();
-        UtilizadorController uc = new UtilizadorController(u1);
+        AtivoCreatorIndice creatorIndice = new AtivoCreatorIndice();
+        indices = creatorIndice.createAtivos();
+
+        AtivoCreatorAcao creatorAcao = new AtivoCreatorAcao();
+        acoes = creatorAcao.createAtivos();
+
+        Mercado mercado = new Mercado(indices, acoes, moedas);
+        MercadoController mc = new MercadoController(mercado);
+
+        Utilizador utilizador = new Utilizador();
+        UtilizadorController uc = new UtilizadorController(utilizador);
 
         new MainUI(uc, mc).initComponents();
-
     }
 
 
