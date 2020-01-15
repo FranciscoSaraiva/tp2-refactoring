@@ -3,9 +3,6 @@ import Controllers.UtilizadorController;
 import Models.*;
 import Views.*;
 import Service.*;
-import jdk.jshell.execution.Util;
-
-import javax.swing.*;
 
 public class Main {
 
