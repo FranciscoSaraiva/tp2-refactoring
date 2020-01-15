@@ -1,0 +1,36 @@
+{
+  "companiesPriceList" : [ {
+    "symbol" : "AAPL",
+    "price" : 314.79
+  }, {
+    "symbol" : "AMD",
+    "price" : 48.695
+  }, {
+    "symbol" : "CX",
+    "price" : 3.805
+  }, {
+    "symbol" : "F",
+    "price" : 9.265
+  }, {
+    "symbol" : "FB",
+    "price" : 221.08
+  }, {
+    "symbol" : "GDX",
+    "price" : 28.315
+  }, {
+    "symbol" : "GOOG",
+    "price" : 1438.2
+  }, {
+    "symbol" : "HPQ",
+    "price" : 21.415
+  }, {
+    "symbol" : "INTC",
+    "price" : 59.23
+  }, {
+    "symbol" : "MSFT",
+    "price" : 163.325
+  }, {
+    "symbol" : "MU",
+    "price" : 56.775
+  } ]
+}
