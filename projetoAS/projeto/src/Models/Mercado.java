@@ -7,10 +7,6 @@ public class Mercado {
 	private List<Indice> indices;
 	private List<Acao> acoes;
 	private List<Moeda> moedas;
-	//private List<Commodity> commodities; //@SMELL dispensable
-
-	public Mercado(){
-	}
 
 	public Mercado(List<Indice> indices, List<Acao> acoes, List<Moeda> moedas) {
 		this.indices = indices;
@@ -43,26 +39,39 @@ public class Mercado {
 	}
 
     public Ativo getAtivoPorNome(String nomeAtivo) {
+		Ativo indice = getIndicePorNome(nomeAtivo);
+		if(indice!=null)
+			return indice;
+		Ativo acao = getAcaoPorNome(nomeAtivo);
+		if(acao!=null)
+			return acao;
+		Ativo moeda = getMoedaPorNome(nomeAtivo);
+		if(moeda!=null)
+			return moeda;
+		return null;
+    }
 
-		//@SMELL dispensable
-		for(int i = 0; i < indices.size(); i++){
-			if(nomeAtivo.compareTo(indices.get(i).getNome()) == 0){ //@SMELL ooabuser
-				return indices.get(i);
-			}
-		}
-
-		for(int i = 0; i < acoes.size(); i++){
-			if(nomeAtivo.compareTo(acoes.get(i).getNome()) == 0){ //@SMELL ooabuser
-				return acoes.get(i);
-			}
-		}
-
-		for(int i = 0; i < moedas.size(); i++){
-			if(nomeAtivo.compareTo(moedas.get(i).getNome()) == 0){ //@SMELL ooabuser
-				return moedas.get(i);
-			}
+    public Ativo getIndicePorNome(String nome){
+		for(Indice indice: indices){
+			if(indice.getNome().equals(nome))
+				return indice;
 		}
 		return null;
+	}
 
-    }
+	public Ativo getAcaoPorNome(String nome){
+		for(Acao acao: acoes){
+			if(acao.getNome().equals(nome))
+				return acao;
+		}
+		return null;
+	}
+
+	public Ativo getMoedaPorNome(String nome){
+		for(Moeda moeda: moedas){
+			if(moeda.getNome().equals(nome))
+				return moeda;
+		}
+		return null;
+	}
 }
